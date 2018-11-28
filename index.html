@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LB Diner Randomizer</title>
+  <link rel="stylesheet" href="scripts/semantic/semantic.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="scripts/jquery/jquery-3.3.1.min.js"></script>  
+  <script src="scripts/semantic/semantic.min.js"></script>
+</head>
+<body>
+  
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="three wide column"></div>
+      <div class="ten wide column center aligned">
+        <h3>Where to eat within UPLB campus?</h3>
+      </div>
+      <div class="three wide column"></div>
+    </div>
+
+    <div class="row centered">
+      <button class="massive ui blue button" onclick="get_diner()">
+        <h1>RANDOMIZE</h1>
+      </button>
+    </div>
+
+    <div class="row centered">
+      <h1 id="diner">Find out!</h1>
+    </div>
+
+  </div>  
+  <script type="text/javascript">
+    var diner;
+
+    function get_diner() {
+      
+      var diner_places = ["Mcdo", "KFC", "Jollibee", "Batchy", "Black and Brew", "Cadapan's", "Coop", "SU", "Chowking", "Searca", "711", "Tess and Ylloy's", "Ken's", "Hannah Rose", "Daniella's", "Ellen's", "Selena's", "Eatsumo", "Chelsea's"];
+      var diner_places_length = diner_places.length;
+      console.log(diner_places_length);
+      var diner_index = Math.floor((Math.random() * diner_places_length));
+      
+      diner = diner_places[diner_index];
+
+      $(document).ready(function() {
+        $('#diner').html(diner);
+      })
+    }
+  </script>
+</body>
+</html>
